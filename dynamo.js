@@ -77,10 +77,10 @@ module.exports = class DB {
     try {
       data = await this.get("movie-genre", ID, table);
       if (!data) {
-        data = { "movie-genre": ID, genre, count: 1 };
+        data = { "movie-genre": ID, genre, count: 0 };
       }
     } catch (err) {
-      data = { "movie-genre": ID, genre, count: 1 };
+      data = { "movie-genre": ID, genre, count: 0 };
     }
   
     let newData = { ...data, count: data.count + 1 };
